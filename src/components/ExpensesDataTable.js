@@ -57,7 +57,14 @@ function ExpensesDataTable(props) {
         </tbody>
         <tfoot>
           <tr>
-            <th colSpan="6">PODSUMOWANIE</th>
+            <th colSpan="6">
+              PODSUMOWANIE{' '}
+              <span>
+                {props.selectedCategory === ''
+                  ? ''
+                  : `- ${props.selectedCategory}`}
+              </span>
+            </th>
           </tr>
           <tr>
             <th colSpan="2" scope="row">
