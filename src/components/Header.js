@@ -8,8 +8,8 @@ function Header() {
       <div className="header__logo"></div>
       <h1 className="header__heading">Arkusz stanowiska komputerowego</h1>
       <p className="header__lead">
-        Ten arkusz kalkulacyjny wadatków pomoże Ci podliczyć koszty stworzenia
-        nowgo stanowiska komputerowego.
+        Ten arkusz kalkulacyjny wydatków pomoże Ci podliczyć koszty stworzenia
+        nowego stanowiska komputerowego.
       </p>
     </div>
   );
