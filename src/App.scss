@@ -1,0 +1,256 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #282c34;
+  background-color: #e1e1e3;
+  text-decoration: none;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  &:hover {
+    color: #a3a3aa;
+    background-color: #37373a;
+  }
+
+  &--small {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+
+  &--red {
+    color: #ffffff;
+    background-color: #e50914;
+
+    &:hover {
+      color: #ffffff;
+      background-color: #f40612;
+    }
+  }
+
+  &--blue {
+    color: #ffffff;
+    background-color: #007aff;
+
+    &:hover {
+      color: #ffffff;
+      background-color: #0a84ff;
+    }
+  }
+
+  &--dark {
+    color: #a3a3aa;
+    background-color: #38383a;
+
+    &:hover {
+      color: #282c34;
+      background-color: #ffffff;
+    }
+  }
+
+  &--dark-blue {
+    color: #007aff;
+    background-color: #38383a;
+
+    &:hover {
+      color: #ffffff;
+      background-color: #007aff;
+    }
+  }
+
+  &--dark-red {
+    color: #ff3b30;
+    background-color: #38383a;
+
+    &:hover {
+      color: #ffffff;
+      background-color: #ff3b30;
+    }
+  }
+}
+
+.icon-add {
+  display: block;
+  width: 14px;
+  height: 14px;
+  position: relative;
+  border-radius: 50%;
+  background-color: #ffffff;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #007aff;
+    border-radius: 2px;
+  }
+
+  &::before {
+    height: 10px;
+    width: 2px;
+  }
+
+  &::after {
+    height: 2px;
+    width: 10px;
+  }
+}
+
+.icon-chevron-down,
+.icon-chevron-up {
+  position: relative;
+  display: block;
+  width: 14px;
+  height: 10px;
+
+  &::before,
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+}
+
+.icon-chevron-up {
+  &::before,
+  &::after {
+    transform: translateY(-25%);
+  }
+
+  &::before {
+    bottom: 0;
+    border-bottom: 7px solid #282c34;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+  }
+
+  &::after {
+    bottom: -2px;
+    border-bottom: 7px solid #e1e1e3;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+  }
+
+  &--blue,
+  &--dark-blue {
+    &::before {
+      border-bottom: 7px solid #007aff;
+    }
+
+    &::after {
+      border-bottom: 7px solid #38383a;
+    }
+  }
+
+  &--red,
+  &--dark-red {
+    &::before {
+      border-bottom: 7px solid #ff3b30;
+    }
+
+    &::after {
+      border-bottom: 7px solid #38383a;
+    }
+  }
+
+  &--dark {
+    &::before {
+      border-bottom: 7px solid #a3a3aa;
+    }
+
+    &::after {
+      border-bottom: 7px solid #38383a;
+    }
+  }
+}
+
+.icon-chevron-down {
+  &::before,
+  &::after {
+    transform: translateY(25%);
+  }
+
+  &::before {
+    top: 0;
+    border-top: 7px solid #282c34;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+  }
+
+  &::after {
+    top: -2px;
+    border-top: 7px solid #e1e1e3;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+  }
+
+  &--blue,
+  &--dark-blue {
+    &::before {
+      border-top: 7px solid #007aff;
+    }
+
+    &::after {
+      border-top: 7px solid #38383a;
+    }
+  }
+
+  &--red,
+  &--dark-red {
+    &::before {
+      border-top: 7px solid #ff3b30;
+    }
+
+    &::after {
+      border-top: 7px solid #38383a;
+    }
+  }
+
+  &--dark {
+    &::before {
+      border-top: 7px solid #a3a3aa;
+    }
+
+    &::after {
+      border-top: 7px solid #38383a;
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .app-container {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .app-container {
+    max-width: 720px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .app-container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .app-container {
+    max-width: 1140px;
+  }
+}
