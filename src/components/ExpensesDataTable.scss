@@ -1,0 +1,179 @@
+.datatable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f7f7fa;
+  font-size: 1rem;
+
+  &__row {
+    &:hover {
+      background-color: #ecebf0;
+    }
+  }
+
+  &__cell {
+    &--num {
+      width: 25px;
+    }
+
+    &--name {
+      min-width: 150px;
+    }
+
+    &--info {
+      min-width: 180px;
+    }
+
+    &--category {
+      width: 130px;
+    }
+
+    &--price {
+      width: 60px;
+    }
+
+    &--actions {
+      width: 90px;
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        display: flex;
+        align-items: center;
+
+        span:first-child {
+          margin-right: 5px;
+        }
+
+        &:last-of-type {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
+  thead {
+    border-bottom: 5px solid #ffffff;
+
+    tr {
+      &:hover {
+        cursor: default;
+        background-color: transparent;
+      }
+    }
+
+    th {
+      color: #abaab1;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-align: left;
+      padding: 5px 10px;
+    }
+  }
+
+  tbody {
+    td {
+      color: #303033;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-align: left;
+      padding: 7px 10px;
+    }
+  }
+
+  tfoot {
+    background-color: #fff;
+
+    th {
+      color: #6e6e73;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-align: left;
+      padding: 7px 10px;
+
+      span {
+        color: #abaab1;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-left: 10px;
+      }
+    }
+
+    td {
+      color: #6e6e73;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-align: left;
+      padding: 7px 10px;
+    }
+
+    tr:first-child {
+      th {
+        padding: 15px 10px;
+        text-align: left;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+    }
+
+    tr:last-child {
+      th {
+        font-weight: 700;
+        font-size: 0.9rem;
+        padding-bottom: 20px;
+      }
+
+      td {
+        font-weight: 700;
+        font-size: 1rem;
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .datatable {
+    thead {
+      th {
+        font-size: 0.9rem;
+      }
+    }
+
+    tbody {
+      td {
+        font-size: 1rem;
+      }
+    }
+
+    tfoot {
+      th {
+        font-size: 0.9rem;
+
+        span {
+          font-size: 0.8rem;
+        }
+      }
+
+      td {
+        font-size: 1rem;
+      }
+
+      tr:first-child {
+        th {
+          font-size: 1.2rem;
+        }
+      }
+
+      tr:last-child {
+        th {
+          font-size: 1rem;
+        }
+
+        td {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

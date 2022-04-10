@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Header from './components/Header';
 import NewExpense from './components/NewExpense';
+import Expenses from './components/Expenses';
 
 import './App.scss';
 
@@ -16,6 +17,7 @@ function App() {
     <div className="app-container">
       <Header />
       <NewExpense onAddExpense={addExpense} />
+      <Expenses items={expenses} />
     </div>
   );
 }
