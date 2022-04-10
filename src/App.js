@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Header from './components/Header';
 import NewExpense from './components/NewExpense';
@@ -8,6 +8,17 @@ import './App.scss';
 
 function App() {
   const [expenses, setExpenses] = useState([]);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem('expenses-db');
+    if (storedData) {
+      setExpenses(JSON.parse(storedData));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('expenses-db', JSON.stringify(expenses));
+  }, [expenses]);
 
   function addExpense(expense) {
     setExpenses(prevState => [...prevState, expense]);
