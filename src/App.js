@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Header from './components/Header';
 import NewExpense from './components/NewExpense';
@@ -6,10 +6,16 @@ import NewExpense from './components/NewExpense';
 import './App.scss';
 
 function App() {
+  const [expenses, setExpenses] = useState([]);
+
+  function addExpense(expense) {
+    setExpenses(prevState => [...prevState, expense]);
+  }
+
   return (
     <div className="app-container">
       <Header />
-      <NewExpense />
+      <NewExpense onAddExpense={addExpense} />
     </div>
   );
 }

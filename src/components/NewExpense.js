@@ -8,6 +8,10 @@ function NewExpense(props) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const formRef = useRef();
 
+  const handleAddExpense = newExpense => {
+    props.onAddExpense(newExpense);
+  };
+
   const handleCollapse = () => {
     setIsCollapsed(prevState => {
       return !prevState;
@@ -47,7 +51,10 @@ function NewExpense(props) {
             : { height: '0px' }
         }
       >
-        <ExpenseForm />
+        <ExpenseForm
+          onAddExpense={handleAddExpense}
+          onCancel={handleCollapse}
+        />
       </div>
     </section>
   );
