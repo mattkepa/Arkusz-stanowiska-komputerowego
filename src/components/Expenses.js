@@ -7,6 +7,10 @@ import './Expenses.scss';
 function Expenses(props) {
   const expenses = props.items;
 
+  const handleDeleteExpense = expenseID => {
+    props.onDeleteExpense(expenseID);
+  };
+
   return (
     <React.Fragment>
       <div className="section-separator"></div>
@@ -24,7 +28,10 @@ function Expenses(props) {
                 <h3>Stanowisko komputerowe</h3>
               </div>
             </div>
-            <ExpensesDataTable items={expenses} />
+            <ExpensesDataTable
+              items={expenses}
+              onDeleteExpense={handleDeleteExpense}
+            />
           </React.Fragment>
         )}
       </section>

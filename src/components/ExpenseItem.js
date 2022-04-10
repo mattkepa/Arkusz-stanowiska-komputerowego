@@ -3,6 +3,10 @@ import React from 'react';
 function ExpenseItem(props) {
   const data = props.itemData;
 
+  const handleDelete = () => {
+    props.onDeleteItem(data.id);
+  };
+
   return (
     <tr className="datatable__row">
       <td className="datatable__cell datatable__cell--num">
@@ -20,7 +24,11 @@ function ExpenseItem(props) {
         })}
       </td>
       <td className="datatable__cell datatable__cell--actions">
-        <button type="button" className="btn btn--small btn--red">
+        <button
+          type="button"
+          className="btn btn--small btn--red"
+          onClick={handleDelete}
+        >
           <span className="icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"

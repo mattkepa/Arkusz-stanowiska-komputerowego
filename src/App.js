@@ -13,11 +13,20 @@ function App() {
     setExpenses(prevState => [...prevState, expense]);
   }
 
+  function deleteExpense(expenseID) {
+    setExpenses(prevState => {
+      const index = prevState.findIndex(expense => expense.id === expenseID);
+      const newState = [...prevState];
+      newState.splice(index, 1);
+      return newState;
+    });
+  }
+
   return (
     <div className="app-container">
       <Header />
       <NewExpense onAddExpense={addExpense} />
-      <Expenses items={expenses} />
+      <Expenses items={expenses} onDeleteExpense={deleteExpense} />
     </div>
   );
 }

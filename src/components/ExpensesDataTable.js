@@ -13,6 +13,10 @@ function ExpensesDataTable(props) {
     0
   );
 
+  const handleDeleteExpense = expenseID => {
+    props.onDeleteExpense(expenseID);
+  };
+
   return (
     <div className="expenses__datatable">
       <table className="datatable">
@@ -47,6 +51,7 @@ function ExpensesDataTable(props) {
             <ExpenseItem
               key={expense.id}
               itemData={{ ...expense, index: index }}
+              onDeleteItem={handleDeleteExpense}
             />
           ))}
         </tbody>
